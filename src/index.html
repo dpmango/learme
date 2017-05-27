@@ -8,6 +8,8 @@
       Bootstrap 101 Template
     </title>
     <link href='css/main.css' rel='stylesheet' type='text/css'>
+    <link href='css/custom.css' rel='stylesheet' type='text/css'>
+
     <script src="https://code.jquery.com/jquery.min.js">
     </script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -15,6 +17,11 @@
     </script>
     <script src="https://code.jquery.com/jquery-1.11.3.js">
     </script>
+
+    <script src="js/libs/jquery.sortable.min.js"></script>
+    <script src="js/main.js"></script>
+
+
   </head>
   <body>
     <div class="content">
@@ -95,148 +102,158 @@
                     </div>
                   </div>
 
-                  <div class="spoiler_box">
-                    <button class="spoiler_box_btn" data-target="#hide-me" data-toggle="collapse" type="button">
-                    <div class="row">
-                      <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs">
-                        <img alt="" src="https://learme.ru/assets/themes/learme/img/ic-drag.png">
-                      </div>
-
-                      <div class="col-lg-8 col-md-8 col-sm-8">
-                        <div class="sp_title">
-                          <span>Часть 1. Введение</span>
+                  <!-- changed parts comes here -->
+                  <div class="js-sortable">
+                    <!-- sortable element may have data-id and data-name for json stringify -->
+                    <div class="spoiler_box" data-id='1' data-name='Урок 1'>
+                      <!-- head of section - toggler -->
+                      <button class="spoiler_box_btn" data-target="#hide-me" data-toggle="collapse" type="button">
+                      <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs">
+                          <img alt="" src="https://learme.ru/assets/themes/learme/img/ic-drag.png">
                         </div>
-                      </div>
 
-                      <div class="col-lg-1 col-md-1 col-sm-1">
-                        1 урок
-                      </div>
-
-                      <div class="col-lg-2 col-md-2">
-                        <img alt="" src="https://learme.ru/assets/themes/learme/img/ic-arrow2.png">
-                      </div>
-                    </div></button>
-                    <div class="collapse" id="hide-me">
-                      <div class="sp_content">
-                        <div class="row sp_line">
-                          <div class="col-lg-2 col-md-2 col-sm-2 sp_line_1">
-                            Урок 2.
-                          </div>
-
-                          <div class="col-lg-7 col-md-6 col-sm-7 sp_line_2">
-                            <a href="#">Государственное регулирование внешнеэкономической деятельности</a>
-                          </div>
-
-                          <div class="col-lg-3 col-md-4 col-sm-3 sp_line_3">
-                            <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-edit.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-show.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-bin.png"></a>
+                        <div class="col-lg-8 col-md-8 col-sm-8">
+                          <div class="sp_title">
+                            <span>Часть 1. Введение</span>
                           </div>
                         </div>
 
-                        <div class="row sp_line">
-                          <div class="col-lg-2 col-md-2 col-sm-2 sp_line_1">
-                            Урок 2.
-                          </div>
-
-                          <div class="col-lg-7 col-md-6 col-sm-7 sp_line_2">
-                            <a href="#">Государственное регулирование внешнеэкономической деятельности</a>
-                          </div>
-
-                          <div class="col-lg-3 col-md-4 col-sm-3 sp_line_3">
-                            <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-edit.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-show.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-bin.png"></a>
-                          </div>
+                        <div class="col-lg-1 col-md-1 col-sm-1">
+                          1 урок
                         </div>
 
-                        <div class="row sp_line">
-                          <div class="col-lg-2 col-md-2 col-sm-2 sp_line_1">
-                            Урок 2.
-                          </div>
-
-                          <div class="col-lg-7 col-md-6 col-sm-7 sp_line_2">
-                            <a href="#">Государственное регулирование внешнеэкономической деятельности</a>
-                          </div>
-
-                          <div class="col-lg-3 col-md-4 col-sm-3 sp_line_3">
-                            <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-edit.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-show.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-bin.png"></a>
-                          </div>
+                        <div class="col-lg-2 col-md-2">
+                          <img alt="" src="https://learme.ru/assets/themes/learme/img/ic-arrow2.png">
                         </div>
+                      </div></button>
 
-                        <div class="dell_less">
-                          <a href="#">Удалить часть</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                      <!-- collapsable part -->
+                      <div class="collapse" id="hide-me">
+                        <div class="sp_content">
+                          <!-- single row -->
+                          <div class="row sp_line" data-id='1'>
+                            <div class="col-lg-2 col-md-2 col-sm-2 sp_line_1">
+                              Урок 1.
+                            </div>
 
-                  <div class="spoiler_box">
-                    <button class="spoiler_box_btn" data-target="#hide-me2" data-toggle="collapse" type="button">
-                    <div class="row">
-                      <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs">
-                        <img alt="" src="https://learme.ru/assets/themes/learme/img/ic-drag.png">
-                      </div>
+                            <div class="col-lg-7 col-md-6 col-sm-7 sp_line_2">
+                              <a href="#">О чем этот раздел</a>
+                            </div>
 
-                      <div class="col-lg-8 col-md-8 col-sm-8">
-                        <div class="sp_title">
-                          <span>Часть 1. Введение</span>
-                        </div>
-                      </div>
+                            <div class="col-lg-3 col-md-4 col-sm-3 sp_line_3">
+                              <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-edit.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-show.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-bin.png"></a>
+                            </div>
+                          </div>
+                          <!-- single row -->
+                          <div class="row sp_line" data-id='2'>
+                            <div class="col-lg-2 col-md-2 col-sm-2 sp_line_1">
+                              Урок 2.
+                            </div>
 
-                      <div class="col-lg-1 col-md-1 col-sm-1">
-                        1 урок
-                      </div>
+                            <div class="col-lg-7 col-md-6 col-sm-7 sp_line_2">
+                              <a href="#">Термины и определения</a>
+                            </div>
 
-                      <div class="col-lg-2 col-md-2">
-                        <img alt="" src="https://learme.ru/assets/themes/learme/img/ic-arrow2.png">
-                      </div>
-                    </div></button>
-                    <div class="collapse" id="hide-me2">
-                      <div class="sp_content">
-                        <div class="row sp_line">
-                          <div class="col-lg-2 col-md-2 col-sm-2 sp_line_1">
-                            Урок 2.
+                            <div class="col-lg-3 col-md-4 col-sm-3 sp_line_3">
+                              <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-edit.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-show.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-bin.png"></a>
+                            </div>
+                          </div>
+                          <!-- single row -->
+                          <div class="row sp_line" data-id='3'>
+                            <div class="col-lg-2 col-md-2 col-sm-2 sp_line_1">
+                              Урок 3.
+                            </div>
+
+                            <div class="col-lg-7 col-md-6 col-sm-7 sp_line_2">
+                              <a href="#">Основы экономики в контексте урока</a>
+                            </div>
+
+                            <div class="col-lg-3 col-md-4 col-sm-3 sp_line_3">
+                              <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-edit.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-show.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-bin.png"></a>
+                            </div>
                           </div>
 
-                          <div class="col-lg-7 col-md-6 col-sm-7 sp_line_2">
-                            <a href="#">Государственное регулирование внешнеэкономической деятельности</a>
+                          <div class="dell_less">
+                            <a href="#">Удалить часть</a>
                           </div>
-
-                          <div class="col-lg-3 col-md-4 col-sm-3 sp_line_3">
-                            <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-edit.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-show.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-bin.png"></a>
-                          </div>
-                        </div>
-
-                        <div class="row sp_line">
-                          <div class="col-lg-2 col-md-2 col-sm-2 sp_line_1">
-                            Урок 2.
-                          </div>
-
-                          <div class="col-lg-7 col-md-6 col-sm-7 sp_line_2">
-                            <a href="#">Государственное регулирование внешнеэкономической деятельности</a>
-                          </div>
-
-                          <div class="col-lg-3 col-md-4 col-sm-3 sp_line_3">
-                            <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-edit.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-show.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-bin.png"></a>
-                          </div>
-                        </div>
-
-                        <div class="row sp_line">
-                          <div class="col-lg-2 col-md-2 col-sm-2 sp_line_1">
-                            Урок 2.
-                          </div>
-
-                          <div class="col-lg-7 col-md-6 col-sm-7 sp_line_2">
-                            <a href="#">Государственное регулирование внешнеэкономической деятельности</a>
-                          </div>
-
-                          <div class="col-lg-3 col-md-4 col-sm-3 sp_line_3">
-                            <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-edit.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-show.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-bin.png"></a>
-                          </div>
-                        </div>
-
-                        <div class="dell_less">
-                          <a href="#">Удалить часть</a>
                         </div>
                       </div>
                     </div>
+
+                    <!-- next section -->
+                    <div class="spoiler_box" data-id='2' data-name='Урок 2'>
+                      <button class="spoiler_box_btn" data-target="#hide-me2" data-toggle="collapse" type="button">
+                      <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs">
+                          <img alt="" src="https://learme.ru/assets/themes/learme/img/ic-drag.png">
+                        </div>
+
+                        <div class="col-lg-8 col-md-8 col-sm-8">
+                          <div class="sp_title">
+                            <span>Часть 2. Об авторе</span>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-1 col-md-1 col-sm-1">
+                          1 урок
+                        </div>
+
+                        <div class="col-lg-2 col-md-2">
+                          <img alt="" src="https://learme.ru/assets/themes/learme/img/ic-arrow2.png">
+                        </div>
+                      </div></button>
+                      <div class="collapse" id="hide-me2">
+                        <div class="sp_content">
+                          <div class="row sp_line" data-id='4'>
+                            <div class="col-lg-2 col-md-2 col-sm-2 sp_line_1">
+                              Урок 4.
+                            </div>
+
+                            <div class="col-lg-7 col-md-6 col-sm-7 sp_line_2">
+                              <a href="#">Государственное регулирование внешнеэкономической деятельности</a>
+                            </div>
+
+                            <div class="col-lg-3 col-md-4 col-sm-3 sp_line_3">
+                              <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-edit.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-show.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-bin.png"></a>
+                            </div>
+                          </div>
+
+                          <div class="row sp_line" data-id='5'>
+                            <div class="col-lg-2 col-md-2 col-sm-2 sp_line_1">
+                              Урок 5.
+                            </div>
+
+                            <div class="col-lg-7 col-md-6 col-sm-7 sp_line_2">
+                              <a href="#">Монополизация экономики как ограничитель развития</a>
+                            </div>
+
+                            <div class="col-lg-3 col-md-4 col-sm-3 sp_line_3">
+                              <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-edit.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-show.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-bin.png"></a>
+                            </div>
+                          </div>
+
+                          <div class="row sp_line" data-id='6'>
+                            <div class="col-lg-2 col-md-2 col-sm-2 sp_line_1">
+                              Урок 6.
+                            </div>
+
+                            <div class="col-lg-7 col-md-6 col-sm-7 sp_line_2">
+                              <a href="#">Цели экономической политики государства</a>
+                            </div>
+
+                            <div class="col-lg-3 col-md-4 col-sm-3 sp_line_3">
+                              <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-edit.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-show.png"></a> <a href="#"><img alt="" src="https://learme.ru/assets/themes/learme/img/ic-bin.png"></a>
+                            </div>
+                          </div>
+
+                          <div class="dell_less">
+                            <a href="#">Удалить часть</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
 
                   <div class="spacer spacer_big">
