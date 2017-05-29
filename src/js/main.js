@@ -19,16 +19,19 @@ $(function(){
           return false
         }
       // check item moves
-      } else if ( $item.is('.sp_line') ) {
-        if ( container.el.is('.sp_content') ){
-          return true
-        } else {
-          return false
-        }
-      // dissallow everything else
-      } else {
-        return false
+      } else{
+        return true
       }
+      // else if ( $item.is('.sp_line') ) {
+      //   if ( container.el.is('.sp_content') ){
+      //     return true
+      //   } else {
+      //     return false
+      //   }
+      // // dissallow everything else
+      // } else {
+      //   return false
+      // }
     },
     onDrop: function ($item, container, _super) {
       data = lessons.sortable("serialize").get();
