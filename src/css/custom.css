@@ -7,7 +7,10 @@ body.dragging, body.dragging * {
   opacity: 0.5;
   z-index: 2000;
 }
-
+.moving{
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
 ol.js-sortable li{
   display: block;
 }
@@ -28,4 +31,10 @@ ol.js-sortable li.placeholder:before {
   border: 5px solid transparent;
   border-left-color: tomato;
   border-right: none;
+}
+
+
+/* possible merge conflict */
+.dell_less {
+  padding-right: 30px;
 }
