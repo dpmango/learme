@@ -38,11 +38,26 @@ $(function(){
       $item.css(position)
     },
     onDragStart: function ($item, container, _super, event) {
-      // console.clear();
+      // var myList = [];
+      // var movableElIndex;
+      // container.el.find('> li').each(function(i, val){
+      //   // find element
+      //   myList.push( $(val) );
+      //   if ( $(val).data('id') === $item.data('id') ){
+      //     movableElIndex = $item.data('id')
+      //   }
+      // });
+      // console.log($item.data('id'));
+      //
+      // console.log(myList, movableElIndex);
+
       // copy element
-      var createdEl = $item.addClass('moving').wrap('<span/>').parent().html();
-      container.el.append( createdEl );
-      $item.removeClass('moving'); // delete class as this element is absoluted
+      // var createdEl = $item.addClass('moving').wrap('<span/>').parent().html();
+      // container.el.append( createdEl ); // сменить
+      // console.log(myList[movableElIndex - 1]);
+      // $(createdEl).insertBefore( myList[movableElIndex - 1] );
+
+      // $item.removeClass('moving'); // delete class as this element is absoluted
 
       // super execution
       $item.css({
@@ -61,7 +76,7 @@ $(function(){
       jsonString = JSON.stringify(data, null, ' ');
       // data returns array and jsonString is more ajax friednly
       // console.log(data);
-      console.log(jsonString);
+      // console.log(jsonString);
 
       // call ajax calling function
       // updateList();
